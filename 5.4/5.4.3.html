@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function getMaxSubSum(arr) {
+        let sum = 0
+        let resultSum = 0
+        for (let number of arr) {
+            sum += number
+            resultSum = Math.max(resultSum, sum)
+            if (sum < 0) sum = 0;
+
+
+        }
+        alert(resultSum)
+    }
+
+    let arr = [100, -9, 2, -3, 5]
+    getMaxSubSum(arr)
+</script>
+</body>
+</html>

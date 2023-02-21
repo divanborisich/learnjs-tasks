@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function camelize(str) {
+        let upperCaseArr = str.split('-').map(item => (item.length > 0) ? item[0].toUpperCase() + item.slice(1) : item)
+        return upperCaseArr.join('')
+    }
+
+    alert(camelize("-webkit-transition"))
+</script>
+</body>
+</html>

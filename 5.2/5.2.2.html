@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function readNumber() {
+        let x;
+        do {
+            x = +prompt("Введите числовое значение");
+        }
+        while (!Number.isFinite(x));
+
+        if (x == null || x == '') return null;
+
+        return x;
+
+    }
+    alert(`Ваше число: ${readNumber()}`);
+</script>
+</body>
+</html>

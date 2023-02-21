@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function getAverageAge(arr) {
+    let sum = 0
+    let ageArr = arr.map(user => user.age)
+    return ageArr.reduce((sum, age) => sum + age) / arr.length
+  }
+  let vasya = { name: "Вася", age: 25 };
+  let petya = { name: "Петя", age: 30 };
+  let masha = { name: "Маша", age: 29 };
+
+  let arr = [ vasya, petya, masha ];
+
+  alert( getAverageAge(arr) );
+</script>
+</body>
+</html>
