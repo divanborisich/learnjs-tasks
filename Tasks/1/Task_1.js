@@ -1,33 +1,29 @@
 let stringConventions = {
     readString(str) {
-        this.str = str
+        this.str = prompt('Введите строку или слово')
     },
     capitalizeString(str) {
         let lowerStr = this.str.toLowerCase()
-        let capitalizeStr = lowerStr.slice(0, 1).toUpperCase() + lowerStr.slice(1)
-        return capitalizeStr
+        return lowerStr.slice(0, 1).toUpperCase() + lowerStr.slice(1)
     },
     conventionSpacing(str) {
         let updatedStr = this.str.replace(/\s{2,}/g, " ").replace(/([.,;:!?]+)(?=\S)/g, "$1 ");
-        let resultStr = updatedStr.replace(/ +(\p{Po})/gu, "$1");
-
-        return resultStr
+        return updatedStr.replace(/ +(\p{Po})/gu, "$1")
     },
     conventionCount(str) {
-        let arr = 0
-        let deletePunctuation = this.str.replace(/(\p{Po})/gu, "");
-        let arrDeletePunctuation = deletePunctuation.split(' ');
-        for (let i = 0; i < arrDeletePunctuation.length; i++) {
+        let count = 0
+        let deletePunctuationCount = this.str.replace(/(\p{Po})/gu, "");
+        let arrDeletePunctuationCount = deletePunctuationCount.split(' ');
+        for (let i = 0; i < arrDeletePunctuationCount.length; i++) {
             if (i !== '') {
-                if (i)
-                    arr += 1
+                count += 1
             }
         }
         return count;
     },
     calculateUniqueWords(str) {
-        let deletePunct = this.str.replace(/(\p{Po})/gu, "");
-        let arrStr = deletePunct.split(' ')
+        let deletePunctuation = this.str.replace(/(\p{Po})/gu, "");
+        let arrStr = deletePunctuation.split(' ')
         let result = arrStr.reduce(function (obj, word) {
             obj[word] = (obj[word] || 0) + 1;
             return obj;
@@ -49,8 +45,8 @@ let stringConventions = {
 
 }
 
-stringConventions.readString("привет , подсчитай,привет .это все это")
-alert(stringConventions.capitalizeString())
-// alert(stringConventions.conventionCount())
-stringConventions.calculateUniqueWords()
+stringConventions.readString()
+// alert(stringConventions.capitalizeString())
 // alert(stringConventions.conventionSpacing())
+// alert(stringConventions.conventionCount())
+// stringConventions.calculateUniqueWords()
